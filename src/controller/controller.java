@@ -123,7 +123,9 @@ public class controller extends HttpServlet {
 			//List<BbsDto> list =bdao.getSelBbslist(sel, keyword);
 			List<BbsDto> list =bdao.getPagingBbslist(sel, keyword, currPage);
 	
-					
+			req.setAttribute("bbslist", list);
+			
+			forward("bbslist.jsp", req, resp);		
 		}
 		
 		
